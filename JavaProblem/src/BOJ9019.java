@@ -1,14 +1,21 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class BOJ9019 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int T = Integer.parseInt(br.readLine());
 
         for (int i = 1; i <= T; i++) {
-            int A = sc.nextInt(), B = sc.nextInt();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            Integer A = Integer.parseInt(st.nextToken());
+            Integer B = Integer.parseInt(st.nextToken());
+
             boolean[] visited = new boolean[10000];
             visited[A] = true;
 
@@ -42,7 +49,6 @@ public class BOJ9019 {
             }
         }
 
-        sc.close();
     }
 
     static class Calc {
